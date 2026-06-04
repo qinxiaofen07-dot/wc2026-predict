@@ -111,7 +111,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div id="posterWrap"><span id="posterClose" onclick="closePoster()">✕</span>
 <img id="posterImg" src="" alt=""><div id="posterHint">📱 长按保存 → 发抖音</div></div>
 <canvas id="pc" style="display:none"></canvas>
-<div id="vtg">v3.2</div>
+<div id="vtg">v3.3</div>
 
 <script>
 var FL={
@@ -228,37 +228,41 @@ function rB(){
     '<span class="kmatch">M'+mid+'</span></div>';
   }
 
-  h+='<div class="round-col"><div class="round-lbl">32强</div>';
+  h+='<div class="round-col"><div class="round-lbl">32强 6.28-7.3</div>';
   for(var i=0;i<16;i++){
     var mid=73+i, t0=r32t[i][0], t1=r32t[i][1];
     h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">'+sH(t0,mid,0)+sH(t1,mid,1)+'</div>';
   }
   h+='</div>';
 
-  h+='<div class="round-col"><div class="round-lbl">16强</div>';
+  h+='<div class="round-col"><div class="round-lbl">16强 7.4-7.7</div>';
   for(var i=0;i<8;i++){
     var mid=89+i, f0=feedTeam(mid,0), f1=feedTeam(mid,1);
     h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">'+sH(f0||{n:'?',f:''},mid,0)+sH(f1||{n:'?',f:''},mid,1)+'</div>';
   }
   h+='</div>';
 
-  h+='<div class="round-col"><div class="round-lbl">8强</div>';
+  h+='<div class="round-col"><div class="round-lbl">8强 7.9-7.11</div>';
   for(var i=0;i<4;i++){
     var mid=97+i, f0=feedTeam(mid,0), f1=feedTeam(mid,1);
     h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">'+sH(f0||{n:'?',f:''},mid,0)+sH(f1||{n:'?',f:''},mid,1)+'</div>';
   }
   h+='</div>';
 
-  h+='<div class="round-col"><div class="round-lbl">半决赛</div>';
+  h+='<div class="round-col"><div class="round-lbl">半决赛 7.14-15</div>';
   for(var i=0;i<2;i++){
     var mid=101+i, f0=feedTeam(mid,0), f1=feedTeam(mid,1);
     h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">'+sH(f0||{n:'?',f:''},mid,0)+sH(f1||{n:'?',f:''},mid,1)+'</div>';
   }
   h+='</div>';
 
-  var champ=KW[104];
+  var f0=feedTeam(104,0), f1=feedTeam(104,1), champ=KW[104];
   h+='<div class="round-col" style="justify-content:center"><div class="round-lbl">决赛 7.19</div>';
-  h+='<div class="champion-slot"'+(champ?' onclick="cFin()" style="cursor:pointer"':'')+'>';
+  h+='<div class="match-box'+(champ?' hasWin':'')+'">';
+  h+=sH(f0||{n:'?',f:''},104,0);
+  h+=sH(f1||{n:'?',f:''},104,1);
+  h+='</div>';
+  h+='<div class="champion-slot"'+(champ?' style="cursor:pointer" onclick="cFin()"':'')+'>';
   h+='<span class="clbl">🏆 冠军</span><span class="cflag">'+(champ?(FL[champ]||''):'')+'</span><span class="cname">'+(champ||'?')+'</span></div></div>';
 
   tree.innerHTML=h;
