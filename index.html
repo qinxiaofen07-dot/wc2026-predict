@@ -8,59 +8,68 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0a0e27;color:#fff;min-height:100vh}
 .container{max-width:500px;margin:0 auto;padding:16px 12px}
-.header{text-align:center;padding:24px 0 16px}
-.header h1{font-size:22px;background:linear-gradient(135deg,#f5af19,#f12711);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.header{text-align:center;padding:20px 0 12px}
+.header h1{font-size:22px;background:linear-gradient(135deg,#f5af19,#f12711);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
 .header .sub{font-size:12px;color:#8892b0}
-.badge{display:inline-block;background:rgba(245,175,25,.15);border:1px solid rgba(245,175,25,.3);border-radius:16px;padding:3px 12px;font-size:11px;color:#f5af19;margin-top:6px}
+.badge{display:inline-block;background:rgba(245,175,25,.15);border:1px solid rgba(245,175,25,.3);border-radius:16px;padding:2px 10px;font-size:10px;color:#f5af19;margin-top:4px}
+
 .groups-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.group-card{background:linear-gradient(135deg,#1a1f3a,#162032);border:1px solid #2a3050;border-radius:10px;padding:10px;position:relative}
-.group-card .ghead{display:flex;align-items:center;gap:6px;margin-bottom:6px}
-.glabel{background:linear-gradient(135deg,#f5af19,#f12711);color:#fff;font-weight:800;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center}
-.gname{font-size:10px;color:#8892b0}
-.group-card .gstatus{font-size:9px;color:#f5af19;margin-left:auto;display:none}
+.group-card{background:linear-gradient(135deg,#1a1f3a,#162032);border:1px solid #2a3050;border-radius:10px;padding:8px}
+.group-card .ghead{display:flex;align-items:center;gap:4px;margin-bottom:4px}
+.glabel{background:linear-gradient(135deg,#f5af19,#f12711);color:#fff;font-weight:800;font-size:11px;width:22px;height:22px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.gname{font-size:9px;color:#8892b0}
+.gstatus{font-size:9px;color:#f5af19;margin-left:auto;display:none}
 .group-card.ok .gstatus{display:inline}
-.team-row{display:flex;align-items:center;font-size:12px;border-bottom:1px solid rgba(255,255,255,.03);cursor:pointer;transition:all .15s;border-radius:4px;padding:5px 6px;-webkit-tap-highlight-color:transparent;user-select:none}
+
+.team-row{display:flex;align-items:center;font-size:11px;border-bottom:1px solid rgba(255,255,255,.03);cursor:pointer;transition:all .15s;border-radius:3px;padding:4px 5px;-webkit-tap-highlight-color:transparent;user-select:none}
 .team-row:last-child{border-bottom:none}
-.team-row:hover{background:rgba(245,175,25,.08)}
 .team-row .tname{flex:1;color:#ccd6f6}
-.team-row .trole{font-size:9px;min-width:32px;text-align:right;color:#5a6388}
-.team-row.rank1{background:rgba(245,175,25,.18);border-left:3px solid #f5af19;margin-left:-3px}
+.team-row .trole{font-size:8px;min-width:30px;text-align:right;color:#5a6388}
+.team-row.rank1{background:rgba(245,175,25,.2);border-left:3px solid #f5af19;margin-left:-3px}
 .team-row.rank1 .tname{color:#f5af19;font-weight:700}
 .team-row.rank1 .trole{color:#f5af19}
-.team-row.rank2{background:rgba(100,180,255,.12);border-left:3px solid #64b4ff;margin-left:-3px}
+.team-row.rank2{background:rgba(100,180,255,.15);border-left:3px solid #64b4ff;margin-left:-3px}
 .team-row.rank2 .tname{color:#64b4ff;font-weight:600}
 .team-row.rank2 .trole{color:#64b4ff}
-.team-row.rank3{background:rgba(150,150,150,.08);border-left:3px solid #888;margin-left:-3px}
+.team-row.rank3{background:rgba(150,150,150,.1);border-left:3px solid #888;margin-left:-3px}
 .team-row.rank3 .tname{color:#888}
 .team-row.rank3 .trole{color:#888}
-.bracket-section{margin-top:14px}
-.bracket-section h3{font-size:14px;color:#f5af19;margin-bottom:4px}
-.bracket-hint{font-size:10px;color:#5a6388;margin-bottom:8px}
-.bracket-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px}
-.bracket{display:flex;gap:4px;min-width:700px;font-size:9px}
+
+/* BRACKET - immediately after groups */
+.bracket-wrap{border:1px solid #2a3050;border-radius:12px;background:#11162b;margin:12px 0;padding:10px 8px}
+.bracket-wrap h3{font-size:13px;color:#f5af19;text-align:center;margin-bottom:2px}
+.bracket-hint{font-size:9px;color:#5a6388;text-align:center;margin-bottom:6px}
+.bracket-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+.bracket{display:flex;gap:3px;min-width:680px;font-size:8px}
 .round-col{display:flex;flex-direction:column;justify-content:space-around;flex-shrink:0}
-.round-label{text-align:center;font-size:8px;color:#f5af19;font-weight:600;padding:3px 0}
-.match-card{background:#141832;border:1px solid #2a3050;border-radius:6px;margin:2px;padding:4px 6px;width:115px;transition:all .3s}
-.match-card .mslot{padding:2px 0;border-bottom:1px dashed rgba(255,255,255,.04);color:#5a6388;min-height:14px}
+.round-label{text-align:center;font-size:7px;color:#f5af19;font-weight:600;padding:2px 0}
+.match-card{background:#141832;border:1px solid #2a3050;border-radius:5px;margin:1px;padding:2px 4px;width:110px;transition:all .3s}
+.match-card .mslot{padding:1px 0;border-bottom:1px dashed rgba(255,255,255,.04);color:#5a6388;min-height:13px;font-size:8px}
 .match-card .mslot:last-child{border-bottom:none}
-.match-card .mslot.filled{color:#ccd6f6;font-weight:600}
-.match-card .mslot .minfo{font-size:7px;color:#4a5278}
-.match-card.active{border-color:#f5af19;box-shadow:0 0 8px rgba(245,175,25,.2)}
-.champion-box{background:linear-gradient(135deg,#f5af19,#f12711);border-radius:10px;padding:10px;text-align:center;width:115px}
-.champion-box .clabel{font-size:9px;color:rgba(0,0,0,.6)}
-.champion-box .cname{font-size:14px;font-weight:800;color:#0a0e27}
-.btn-main{display:block;width:100%;padding:14px;border:none;border-radius:24px;font-size:15px;font-weight:700;cursor:pointer;margin:8px 0}
+.match-card .mslot.filled{color:#ccd6f6;font-weight:700}
+.match-card .mslot .minfo{font-size:6px;color:#4a5278}
+.match-card.active{border-color:#f5af19;box-shadow:0 0 6px rgba(245,175,25,.15)}
+.champion-box{background:linear-gradient(135deg,#f5af19,#f12711);border-radius:8px;padding:8px;text-align:center;width:110px}
+.champion-box .clabel{font-size:8px;color:rgba(0,0,0,.5)}
+.champion-box .cname{font-size:12px;font-weight:800;color:#0a0e27}
+
+.btn-main{display:block;width:100%;padding:12px;border:none;border-radius:22px;font-size:14px;font-weight:700;cursor:pointer;margin:6px 0}
 .btn-gen{background:linear-gradient(135deg,#f5af19,#f12711);color:#fff}
 .btn-reset{background:transparent;color:#5a6388;border:1px solid #2a3050}
-#posterWrap{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);z-index:999;justify-content:center;align-items:center;overflow:auto}
+
+#posterWrap{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);z-index:9999;justify-content:center;align-items:center;overflow:auto}
 #posterWrap.show{display:flex;flex-direction:column}
-#posterClose{position:absolute;top:16px;right:20px;font-size:28px;color:#fff;cursor:pointer;z-index:1000}
-#posterImg{max-width:95%;max-height:80vh;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,.6)}
-#posterHint{color:#fff;font-size:13px;text-align:center;margin-top:16px}
-.footer{text-align:center;padding:20px 0;color:#4a5278;font-size:10px}
-.progress-bar{height:4px;background:#2a3050;border-radius:2px;margin:8px 0}
+#posterClose{position:absolute;top:14px;right:18px;font-size:26px;color:#fff;cursor:pointer;z-index:10000}
+#posterImg{max-width:95%;max-height:75vh;border-radius:10px;box-shadow:0 6px 30px rgba(0,0,0,.5)}
+#posterHint{color:#fff;font-size:12px;text-align:center;margin-top:12px}
+
+.footer{text-align:center;padding:16px 0;color:#4a5278;font-size:10px}
+.progress-bar{height:3px;background:#2a3050;border-radius:2px;margin:6px 0}
 .progress-fill{height:100%;background:linear-gradient(90deg,#f5af19,#f12711);border-radius:2px;transition:width .3s}
-.progress-text{font-size:10px;color:#5a6388;text-align:right}
+.progress-text{font-size:9px;color:#5a6388;text-align:right}
+
+.bracket-empty{text-align:center;padding:20px;color:#5a6388;font-size:11px}
+#verTag{position:fixed;bottom:4px;right:8px;font-size:8px;color:#2a3050;z-index:1}
 </style>
 </head>
 <body>
@@ -68,49 +77,40 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="header">
 <h1>🏆 2026世界杯冠军预测</h1>
 <div class="sub">美加墨世界杯 · 6.11—7.19 · 48队竞猜</div>
-<div class="badge">🎯 点击球队依次分配: 小组第1 → 第2 → 第3（再点取消）</div>
+<div class="badge">🎯 点击球队依次分配: 🥇第1 → 🥈第2 → 🥉第3（再点取消）</div>
 </div>
 
 <div class="progress-bar"><div class="progress-fill" id="progFill" style="width:0%"></div></div>
-<div class="progress-text" id="progText">0/12 组完成</div>
+<div class="progress-text" id="progText">0/12 组完成 · 已选 0 队</div>
 
 <div class="groups-grid" id="groupsGrid"></div>
 
-<button class="btn-main btn-gen" onclick="genPoster()">📸 生成我的预测海报</button>
-<button class="btn-main btn-reset" onclick="resetAll()">🔄 清空重选</button>
-
-<div class="bracket-section">
-<h3>🏟 动态对阵树 · 选完球队自动填充</h3>
-<div class="bracket-hint">1A=A组第1名 · 2B=B组第2名 · 3C=C组第3名 · ←左右滑动→</div>
+<!-- BRACKET - right after groups, before buttons -->
+<div class="bracket-wrap" id="bracketWrap">
+<h3>🏟 对阵树 — 选队后自动填充 ↓</h3>
+<div class="bracket-hint">1A=A组第1 · 2B=B组第2 · 3C=C组第3 · 左右滑动</div>
 <div class="bracket-scroll"><div class="bracket" id="bracketTree"></div></div>
 </div>
 
+<button class="btn-main btn-gen" onclick="genPoster()">📸 生成我的预测海报</button>
+<button class="btn-main btn-reset" onclick="resetAll()">🔄 清空重选</button>
 <div class="footer">仅供娱乐 · 赛制基于FIFA官方 · 长按海报保存发抖音</div>
 </div>
 
-<div id="posterWrap">
-<span id="posterClose" onclick="closePoster()">✕</span>
-<img id="posterImg" src="" alt="预测海报">
-<div id="posterHint">📱 长按图片保存到相册 → 发抖音</div>
-</div>
+<div id="posterWrap"><span id="posterClose" onclick="closePoster()">✕</span>
+<img id="posterImg" src="" alt="预测海报"><div id="posterHint">📱 长按图片保存到相册 → 发抖音</div></div>
 <canvas id="posterCanvas" style="display:none"></canvas>
+<div id="verTag">v2.1</div>
 
 <script>
 var groups=[
-  {id:'A',teams:['墨西哥','南非','韩国','捷克']},
-  {id:'B',teams:['加拿大','波黑','卡塔尔','瑞士']},
-  {id:'C',teams:['巴西','摩洛哥','海地','苏格兰']},
-  {id:'D',teams:['美国','巴拉圭','澳大利亚','土耳其']},
-  {id:'E',teams:['德国','库拉索','科特迪瓦','厄瓜多尔']},
-  {id:'F',teams:['荷兰','日本','瑞典','突尼斯']},
-  {id:'G',teams:['比利时','埃及','伊朗','新西兰']},
-  {id:'H',teams:['西班牙','佛得角','沙特','乌拉圭']},
-  {id:'I',teams:['法国','塞内加尔','伊拉克','挪威']},
-  {id:'J',teams:['阿根廷','阿尔及利亚','奥地利','约旦']},
-  {id:'K',teams:['葡萄牙','刚果(金)','乌兹别克','哥伦比亚']},
-  {id:'L',teams:['英格兰','克罗地亚','加纳','巴拿马']}
+  {id:'A',teams:['墨西哥','南非','韩国','捷克']},{id:'B',teams:['加拿大','波黑','卡塔尔','瑞士']},
+  {id:'C',teams:['巴西','摩洛哥','海地','苏格兰']},{id:'D',teams:['美国','巴拉圭','澳大利亚','土耳其']},
+  {id:'E',teams:['德国','库拉索','科特迪瓦','厄瓜多尔']},{id:'F',teams:['荷兰','日本','瑞典','突尼斯']},
+  {id:'G',teams:['比利时','埃及','伊朗','新西兰']},{id:'H',teams:['西班牙','佛得角','沙特','乌拉圭']},
+  {id:'I',teams:['法国','塞内加尔','伊拉克','挪威']},{id:'J',teams:['阿根廷','阿尔及利亚','奥地利','约旦']},
+  {id:'K',teams:['葡萄牙','刚果(金)','乌兹别克','哥伦比亚']},{id:'L',teams:['英格兰','克罗地亚','加纳','巴拿马']}
 ];
-
 var r32Pairs=[
   ['E-1','D-3'],['I-1','H-3'],['A-2','B-2'],['F-1','C-2'],
   ['K-2','L-2'],['H-1','J-2'],['D-1','B-3'],['G-1','A-3'],
@@ -119,9 +119,7 @@ var r32Pairs=[
 ];
 var r16Pairs=[[0,1],[2,3],[8,9],[10,11],[4,5],[12,13],[6,7],[14,15]];
 var qfPairs=[[0,1],[4,5],[2,3],[6,7]];
-
-var state={};
-groups.forEach(function(g,i){state[i]=[-1,-1,-1]});
+var state={}; groups.forEach(function(g,i){state[i]=[-1,-1,-1]});
 
 function renderGroups(){
   var g=document.getElementById('groupsGrid');
@@ -157,7 +155,7 @@ function getTeam(gId,rank){
 }
 
 function renderBracket(){
-  var html='';
+  var tree=document.getElementById('bracketTree'), html='';
   function mc(t1,t2,mid){
     var f1=t1.indexOf('-')<0&&t1.indexOf('W')<0, f2=t2.indexOf('-')<0&&t2.indexOf('W')<0;
     return '<div class="match-card'+(f1||f2?' active':'')+'"><div class="mslot'+(f1?' filled':'')+
@@ -166,17 +164,17 @@ function renderBracket(){
   var r32Names=r32Pairs.map(function(p){
     return [getTeam(p[0][0],parseInt(p[0][2]))||p[0], getTeam(p[1][0],parseInt(p[1][2]))||p[1]];
   });
-  html+='<div class="round-col"><div class="round-label">32强赛 6.28</div>';
+  html+='<div class="round-col"><div class="round-label">32强</div>';
   r32Names.forEach(function(n,i){html+=mc(n[0],n[1],'M'+(73+i))});
-  html+='</div><div class="round-col"><div class="round-label">16强赛 7.4</div>';
+  html+='</div><div class="round-col"><div class="round-label">16强</div>';
   r16Pairs.forEach(function(p,i){html+=mc('W'+(73+p[0]),'W'+(73+p[1]),'M'+(89+i))});
-  html+='</div><div class="round-col"><div class="round-label">8强 7.9</div>';
+  html+='</div><div class="round-col"><div class="round-label">8强</div>';
   qfPairs.forEach(function(p,i){html+=mc('W'+(89+p[0]),'W'+(89+p[1]),'M'+(97+i))});
   html+='</div><div class="round-col"><div class="round-label">半决赛</div>';
-  html+=mc('W97','W98','M101'); html+=mc('W99','W100','M102');
-  html+='</div><div class="round-col" style="justify-content:center"><div class="round-label">决赛 7.19</div>';
-  html+='<div class="champion-box"><div class="clabel">🏆 冠军 · M104</div><div class="cname">？</div></div></div>';
-  document.getElementById('bracketTree').innerHTML=html;
+  html+=mc('W97','W98','M101');html+=mc('W99','W100','M102');
+  html+='</div><div class="round-col" style="justify-content:center"><div class="round-label">决赛</div>';
+  html+='<div class="champion-box"><div class="clabel">🏆 M104</div><div class="cname">？</div></div></div>';
+  tree.innerHTML=html;
 }
 
 function updateProgress(){
@@ -188,7 +186,7 @@ function updateProgress(){
 
 function resetAll(){
   groups.forEach(function(g,i){state[i]=[-1,-1,-1]});
-  renderGroups(); renderBracket(); updateProgress();
+  renderGroups();renderBracket();updateProgress();
 }
 
 function genPoster(){
@@ -196,23 +194,18 @@ function genPoster(){
   for(var i=0;i<12;i++)total+=state[i].filter(function(x){return x>=0}).length;
   if(total<24){alert('请至少为每组选出 2 支出线球队（共 24 队）');return}
   var c=document.getElementById('posterCanvas'),W=750,H=1600;
-  c.width=W;c.height=H;
-  var ctx=c.getContext('2d');
+  c.width=W;c.height=H;var ctx=c.getContext('2d');
   ctx.fillStyle='#0a0e27';ctx.fillRect(0,0,W,H);
   ctx.fillStyle='#f5af19';ctx.font='bold 30px "PingFang SC","Microsoft YaHei",sans-serif';ctx.textAlign='center';
   ctx.fillText('🏆 2026世界杯冠军预测',W/2,55);
-  ctx.fillStyle='#8892b0';ctx.font='14px "PingFang SC","Microsoft YaHei",sans-serif';
-  ctx.fillText('FIFA World Cup · 美加墨 · 我的出线预测',W/2,80);
+  ctx.fillStyle='#8892b0';ctx.font='14px sans-serif';ctx.fillText('FIFA · 美加墨 · 我的出线预测',W/2,80);
   var gx=24,gy=110,gw=170,gh=105,gap=10;
   for(var gi=0;gi<12;gi++){
     var g=groups[gi],s=state[gi],cx=gx+(gi%4)*(gw+gap),cy=gy+Math.floor(gi/4)*(gh+gap);
-    ctx.fillStyle='#141832';ctx.strokeStyle='#2a3050';ctx.lineWidth=1;
-    roundRect(ctx,cx,cy,gw,gh,8);ctx.fill();ctx.stroke();
+    ctx.fillStyle='#141832';ctx.strokeStyle='#2a3050';roundRect(ctx,cx,cy,gw,gh,8);ctx.fill();ctx.stroke();
     ctx.fillStyle='#f5af19';roundRect(ctx,cx+6,cy+6,28,22,5);ctx.fill();
-    ctx.fillStyle='#0a0e27';ctx.font='bold 13px "PingFang SC","Microsoft YaHei",sans-serif';ctx.textAlign='center';
-    ctx.fillText(g.id,cx+20,cy+22);
-    ctx.fillStyle='#8892b0';ctx.font='10px sans-serif';ctx.textAlign='left';
-    ctx.fillText('小组',cx+40,cy+22);
+    ctx.fillStyle='#0a0e27';ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.fillText(g.id,cx+20,cy+22);
+    ctx.fillStyle='#8892b0';ctx.font='10px sans-serif';ctx.textAlign='left';ctx.fillText('小组',cx+40,cy+22);
     for(var ti=0;ti<g.teams.length;ti++){
       var ty=cy+40+ti*16,r=s.indexOf(ti),p=r>=0;
       ctx.fillStyle=p?(r===0?'#f5af19':r===1?'#64b4ff':'#888'):'#5a6388';
@@ -223,22 +216,16 @@ function genPoster(){
   }
   var fy=gy+3*(gh+gap)+30;
   ctx.fillStyle='#8892b0';ctx.font='12px sans-serif';ctx.textAlign='center';
-  ctx.fillText('📱 保存图片发抖音参与竞猜 · 6月11日开赛',W/2,fy);
-  ctx.fillText('赛制与对阵基于 FIFA 官方公布 · 仅供娱乐参考',W/2,fy+20);
+  ctx.fillText('📱 保存发抖音参与竞猜 · 6.11开赛',W/2,fy);
+  ctx.fillText('赛制基于FIFA官方公布 · 仅供娱乐',W/2,fy+20);
   document.getElementById('posterImg').src=c.toDataURL('image/png');
   document.getElementById('posterWrap').classList.add('show');
 }
-
 function closePoster(){document.getElementById('posterWrap').classList.remove('show')}
-
 function roundRect(ctx,x,y,w,h,r){
-  ctx.beginPath();
-  ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);
-  ctx.arcTo(x+w,y,x+w,y+r,r);
-  ctx.lineTo(x+w,y+h-r);ctx.arcTo(x+w,y+h,x+w-r,y+h,r);
-  ctx.lineTo(x+r,y+h);ctx.arcTo(x,y+h,x,y+h-r,r);
-  ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y+r);
-  ctx.closePath();
+  ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);
+  ctx.arcTo(x+w,y,x+w,y+r,r);ctx.lineTo(x+w,y+h-r);ctx.arcTo(x+w,y+h,x+w-r,y+h,r);
+  ctx.lineTo(x+r,y+h);ctx.arcTo(x,y+h,x,y+h-r,r);ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y+r);ctx.closePath();
 }
 
 renderGroups();renderBracket();
