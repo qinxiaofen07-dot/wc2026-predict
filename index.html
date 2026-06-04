@@ -89,6 +89,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <meta http-equiv="Expires" content="0">
 </head>
 <body>
+
+<div id="wxTip" style="display:none;background:#f5af19;color:#0a0e27;text-align:center;padding:10px 16px;font-size:13px;font-weight:700;line-height:1.5">
+⚠️ 微信内无法直接使用<br>请点击右上角 <b>···</b> 选择<b>「在浏览器中打开」</b>
+</div>
+
 <div class="container">
 <div class="header"><h1>⚽ 2026世界杯冠军预测</h1><div class="sub">美加墨 · 6.11-7.19 · 48队·完整预测</div></div>
 
@@ -116,7 +121,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <img id="posterImg" src="" alt=""><button onclick="downloadPoster()" style="display:block;margin:8px auto;padding:10px 30px;background:#fff;color:#0a0e27;border:none;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer">💾 点此下载图片</button>
 <div id="posterHint">📱 或长按图片保存 → 发抖音</div></div>
 <canvas id="pc" style="display:none"></canvas>
-<div id="vtg">v3.6</div>
+<div id="vtg">v3.7</div>
 
 <script>
 var FL={
@@ -354,5 +359,13 @@ function rR(x,cx,cy,w,h,r){
 
 rG();rB();
 </script>
+
+<script>
+// WeChat detection
+if(/MicroMessenger/i.test(navigator.userAgent)){
+  document.getElementById('wxTip').style.display='block';
+}
+</script>
+
 </body>
 </html>
