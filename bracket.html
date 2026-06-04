@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026世界杯冠军预测路径图</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0a0e27; color: #fff; min-height: 100vh; }
+.container { max-width: 820px; margin: 0 auto; padding: 20px 16px; }
+
+.header { text-align: center; padding: 30px 0 20px; }
+.header h1 { font-size: 26px; background: linear-gradient(135deg, #f5af19, #f12711); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+.header .subtitle { font-size: 13px; color: #8892b0; }
+.header .badge { display: inline-block; background: rgba(245,175,25,0.15); border: 1px solid rgba(245,175,25,0.3); border-radius: 20px; padding: 4px 14px; font-size: 12px; color: #f5af19; margin-top: 8px; }
+
+.section-title { font-size: 18px; font-weight: 700; margin: 28px 0 14px; padding-left: 10px; border-left: 3px solid #f5af19; }
+
+.groups-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+@media (max-width: 600px) { .groups-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.group-card { background: linear-gradient(135deg, #1a1f3a, #162032); border: 1px solid #2a3050; border-radius: 10px; padding: 10px; }
+.group-card .ghead { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+.group-card .glabel { background: linear-gradient(135deg, #f5af19, #f12711); color: #fff; font-weight: 800; font-size: 13px; width: 26px; height: 26px; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.group-card .gname { font-size: 11px; color: #8892b0; }
+.team-row { display: flex; align-items: center; padding: 3px 0; font-size: 11px; border-bottom: 1px solid rgba(255,255,255,0.04); gap: 6px; cursor: pointer; transition: all 0.2s; border-radius: 4px; padding: 3px 6px; }
+.team-row:hover { background: rgba(245,175,25,0.08); }
+.team-row.picked { background: rgba(245,175,25,0.15); border-left: 3px solid #f5af19; }
+.team-row.picked .tname { color: #f5af19; font-weight: 600; }
+.team-row .tname { flex: 1; color: #ccd6f6; }
+.team-row .trank { font-size: 9px; color: #5a6388; }
+
+.bracket-wrap { margin-top: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.bracket { display: flex; gap: 6px; min-width: 780px; font-size: 10px; }
+.round-col { display: flex; flex-direction: column; justify-content: space-around; flex-shrink: 0; }
+.round-label { text-align: center; font-size: 10px; color: #f5af19; font-weight: 700; padding: 6px 0; }
+.match-card { background: #141832; border: 1px solid #2a3050; border-radius: 8px; margin: 3px; padding: 6px 8px; width: 130px; }
+.match-card .mslot { padding: 3px 0; border-bottom: 1px dashed rgba(255,255,255,0.06); color: #5a6388; }
+.match-card .mslot:last-child { border-bottom: none; }
+.match-card .mslot .minfo { font-size: 8px; color: #4a5278; display: block; }
+
+.champion-box { background: linear-gradient(135deg, #f5af19, #f12711); border-radius: 12px; padding: 14px; text-align: center; width: 130px; }
+.champion-box .clabel { font-size: 10px; opacity: 0.8; color: #0a0e27; }
+.champion-box .cname { font-size: 18px; font-weight: 800; margin-top: 4px; color: #0a0e27; }
+
+.btn-row { display: flex; gap: 10px; justify-content: center; margin: 20px 0; }
+.btn { padding: 10px 24px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
+.btn-export { background: linear-gradient(135deg, #f5af19, #f12711); color: #fff; }
+.btn-hint { background: rgba(255,255,255,0.08); color: #8892b0; border: 1px solid #2a3050; }
+.footer { text-align: center; padding: 24px 0; color: #4a5278; font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🏆 2026世界杯冠军预测路径图</h1>
+<div class="subtitle">2026 FIFA World Cup · 美国 / 加拿大 / 墨西哥</div>
+<div class="badge">📅 6.11—7.19 · 48队 · 104场 · 竞猜活动</div>
+</div>
+
+<div class="section-title">📋 小组赛阶段（12组 × 4队）</div>
+<p style="font-size:11px;color:#5a6388;margin-bottom:12px;">每组前2名 + 8个成绩最好的小组第三 → 32强淘汰赛 · 点击球队标记你的出线预测 ✅</p>
+<div class="groups-grid" id="groupsGrid"></div>
+
+<div class="section-title">🏟 淘汰赛对阵路径（32强 → 冠军）</div>
+<p style="font-size:11px;color:#5a6388;margin-bottom:12px;">1A=A组第1 · 2A=A组第2 · 3A=A组第3 · 小组排名决定落位 · 左右滑动查看完整对阵</p>
+<div class="bracket-wrap"><div class="bracket" id="bracketTree"></div></div>
+
+<div class="btn-row">
+<button class="btn btn-export" onclick="window.print()">📸 截图 / 打印</button>
+<button class="btn btn-hint" onclick="document.querySelectorAll('.team-row.picked').forEach(function(e){e.classList.remove('picked')})">🔄 清空预测</button>
+</div>
+<div class="footer">仅供娱乐参考 · 赛制与对阵基于 FIFA 官方公布 · 2026.06</div>
+</div>
+
+<script>
+var groups = [
+  {id:'A',teams:['🇲🇽 墨西哥','🇿🇦 南非','🇰🇷 韩国','🇨🇿 捷克']},
+  {id:'B',teams:['🇨🇦 加拿大','🇧🇦 波黑','🇶🇦 卡塔尔','🇨🇭 瑞士']},
+  {id:'C',teams:['🇧🇷 巴西','🇲🇦 摩洛哥','🇭🇹 海地','🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰']},
+  {id:'D',teams:['🇺🇸 美国','🇵🇾 巴拉圭','🇦🇺 澳大利亚','🇹🇷 土耳其']},
+  {id:'E',teams:['🇩🇪 德国','🇨🇼 库拉索','🇨🇮 科特迪瓦','🇪🇨 厄瓜多尔']},
+  {id:'F',teams:['🇳🇱 荷兰','🇯🇵 日本','🇸🇪 瑞典','🇹🇳 突尼斯']},
+  {id:'G',teams:['🇧🇪 比利时','🇪🇬 埃及','🇮🇷 伊朗','🇳🇿 新西兰']},
+  {id:'H',teams:['🇪🇸 西班牙','🇨🇻 佛得角','🇸🇦 沙特','🇺🇾 乌拉圭']},
+  {id:'I',teams:['🇫🇷 法国','🇸🇳 塞内加尔','🇮🇶 伊拉克','🇳🇴 挪威']},
+  {id:'J',teams:['🇦🇷 阿根廷','🇩🇿 阿尔及利亚','🇦🇹 奥地利','🇯🇴 约旦']},
+  {id:'K',teams:['🇵🇹 葡萄牙','🇨🇩 刚果(金)','🇺🇿 乌兹别克','🇨🇴 哥伦比亚']},
+  {id:'L',teams:['🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰','🇭🇷 克罗地亚','🇬🇭 加纳','🇵🇦 巴拿马']}
+];
+
+var r32 = [
+  {id:1,t1:'1E',t2:'3D'},{id:2,t1:'1I',t2:'3H'},{id:3,t1:'2A',t2:'2B'},{id:4,t1:'1F',t2:'2C'},
+  {id:5,t1:'2K',t2:'2L'},{id:6,t1:'1H',t2:'2J'},{id:7,t1:'1D',t2:'3B'},{id:8,t1:'1G',t2:'3A'},
+  {id:9,t1:'1C',t2:'2F'},{id:10,t1:'2E',t2:'2I'},{id:11,t1:'1A',t2:'3C'},{id:12,t1:'1L',t2:'3K'},
+  {id:13,t1:'1J',t2:'2H'},{id:14,t1:'2D',t2:'2G'},{id:15,t1:'1B',t2:'3G'},{id:16,t1:'1K',t2:'3L'}
+];
+
+function makeCard(t1,t2,mid) {
+  return '<div class="match-card"><div class="mslot"><span class="minfo">'+mid+'</span> '+t1+'</div><div class="mslot">'+t2+'</div></div>';
+}
+
+function renderBracket() {
+  var tree = document.getElementById('bracketTree');
+  var html = '';
+
+  // R32
+  html += '<div class="round-col"><div class="round-label">32强赛 6.28-7.3</div>';
+  r32.forEach(function(m){ html += makeCard(m.t1,m.t2,'M'+(72+m.id)); });
+  html += '</div>';
+
+  // R16
+  var r16pairs = [[0,1],[2,3],[8,9],[10,11],[4,5],[12,13],[6,7],[14,15]];
+  html += '<div class="round-col"><div class="round-label">16强赛 7.4-7.7</div>';
+  r16pairs.forEach(function(p,i){
+    html += makeCard('W'+(73+r32[p[0]].id),'W'+(73+r32[p[1]].id),'M'+(89+i));
+  });
+  html += '</div>';
+
+  // QF
+  var qfpairs = [[0,1],[4,5],[2,3],[6,7]];
+  html += '<div class="round-col"><div class="round-label">1/4决赛 7.9-7.11</div>';
+  qfpairs.forEach(function(p,i){
+    html += makeCard('W'+(89+p[0]),'W'+(89+p[1]),'M'+(97+i));
+  });
+  html += '</div>';
+
+  // SF
+  html += '<div class="round-col"><div class="round-label">半决赛 7.14-7.15</div>';
+  html += makeCard('W97','W98','M101');
+  html += makeCard('W99','W100','M102');
+  html += '</div>';
+
+  // Final
+  html += '<div class="round-col" style="justify-content:center;"><div class="round-label">决赛 7.19</div>';
+  html += '<div class="champion-box"><div class="clabel">🏆 冠军 · M104</div><div class="cname">？</div></div>';
+  html += '</div>';
+
+  tree.innerHTML = html;
+}
+
+function renderGroups() {
+  var grid = document.getElementById('groupsGrid');
+  grid.innerHTML = groups.map(function(g){
+    return '<div class="group-card"><div class="ghead"><span class="glabel">'+g.id+'</span><span class="gname">小组</span></div>'+
+      g.teams.map(function(t,i){
+        return '<div class="team-row" onclick="this.classList.toggle(\'picked\')"><span class="trank">'+(i===0?'①':i===1?'②':i===2?'③':'④')+'</span><span class="tname">'+t+'</span></div>';
+      }).join('')+'</div>';
+  }).join('');
+}
+
+renderGroups();
+renderBracket();
+</script>
+</body>
+</html>
