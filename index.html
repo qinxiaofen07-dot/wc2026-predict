@@ -5,272 +5,243 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>2026世界杯冠军预测</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0a0e27; color: #fff; min-height: 100vh; }
-.container { max-width: 500px; margin: 0 auto; padding: 16px 12px; }
-.header { text-align: center; padding: 24px 0 16px; }
-.header h1 { font-size: 22px; background: linear-gradient(135deg, #f5af19, #f12711); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 6px; }
-.header .sub { font-size: 12px; color: #8892b0; }
-.badge { display: inline-block; background: rgba(245,175,25,0.15); border: 1px solid rgba(245,175,25,0.3); border-radius: 16px; padding: 3px 12px; font-size: 11px; color: #f5af19; margin-top: 6px; }
-
-.groups-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-.group-card { background: linear-gradient(135deg, #1a1f3a, #162032); border: 1px solid #2a3050; border-radius: 10px; padding: 10px; }
-.group-card .ghead { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
-.glabel { background: linear-gradient(135deg, #f5af19, #f12711); color: #fff; font-weight: 800; font-size: 12px; width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
-.gname { font-size: 10px; color: #8892b0; }
-
-.team-row { display: flex; align-items: center; font-size: 12px; border-bottom: 1px solid rgba(255,255,255,0.03); cursor: pointer; transition: all 0.15s; border-radius: 4px; padding: 4px 6px; -webkit-tap-highlight-color: transparent; user-select: none; }
-.team-row:last-child { border-bottom: none; }
-.team-row:hover { background: rgba(245,175,25,0.08); }
-.team-row.picked { background: rgba(245,175,25,0.15); border-left: 3px solid #f5af19; margin-left: -3px; }
-.team-row.picked .tname { color: #f5af19; font-weight: 600; }
-.team-row .trank { font-size: 9px; color: #5a6388; margin-right: 4px; }
-.team-row .tname { flex: 1; color: #ccd6f6; }
-
-.bracket-section { margin-top: 14px; }
-.bracket-section h3 { font-size: 14px; color: #f5af19; margin-bottom: 8px; }
-.bracket-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
-.bracket { display: flex; gap: 4px; min-width: 700px; font-size: 9px; }
-.round-col { display: flex; flex-direction: column; justify-content: space-around; flex-shrink: 0; }
-.round-label { text-align: center; font-size: 8px; color: #f5af19; font-weight: 600; padding: 3px 0; }
-.match-card { background: #141832; border: 1px solid #2a3050; border-radius: 6px; margin: 2px; padding: 4px 6px; width: 110px; }
-.match-card .mslot { padding: 2px 0; border-bottom: 1px dashed rgba(255,255,255,0.04); color: #5a6388; }
-.match-card .mslot:last-child { border-bottom: none; }
-.mslot .minfo { font-size: 7px; color: #4a5278; }
-
-.champion-box { background: linear-gradient(135deg, #f5af19, #f12711); border-radius: 10px; padding: 10px; text-align: center; width: 110px; }
-.champion-box .clabel { font-size: 9px; color: rgba(0,0,0,0.6); }
-.champion-box .cname { font-size: 14px; font-weight: 800; color: #0a0e27; }
-
-.btn-main { display: block; width: 100%; padding: 14px; border: none; border-radius: 24px; font-size: 15px; font-weight: 700; cursor: pointer; margin: 16px 0; }
-.btn-gen { background: linear-gradient(135deg, #f5af19, #f12711); color: #fff; }
-.btn-share { background: rgba(255,255,255,0.08); color: #8892b0; border: 1px solid #2a3050; }
-.btn-reset { background: transparent; color: #5a6388; border: 1px solid #2a3050; }
-
-#posterWrap { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 999; justify-content: center; align-items: center; overflow: auto; }
-#posterWrap.show { display: flex; }
-#posterClose { position: absolute; top: 16px; right: 20px; font-size: 28px; color: #fff; cursor: pointer; z-index: 1000; }
-#posterImg { max-width: 95%; max-height: 90vh; border-radius: 10px; box-shadow: 0 8px 40px rgba(0,0,0,0.6); }
-#posterHint { position: absolute; bottom: 30px; color: #fff; font-size: 13px; text-align: center; width: 100%; }
-
-.footer { text-align: center; padding: 20px 0; color: #4a5278; font-size: 10px; }
-.progress-bar { height: 4px; background: #2a3050; border-radius: 2px; margin: 8px 0; }
-.progress-fill { height: 100%; background: linear-gradient(90deg, #f5af19, #f12711); border-radius: 2px; transition: width 0.3s; }
-.progress-text { font-size: 10px; color: #5a6388; text-align: right; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0a0e27;color:#fff;min-height:100vh}
+.container{max-width:500px;margin:0 auto;padding:16px 12px}
+.header{text-align:center;padding:24px 0 16px}
+.header h1{font-size:22px;background:linear-gradient(135deg,#f5af19,#f12711);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.header .sub{font-size:12px;color:#8892b0}
+.badge{display:inline-block;background:rgba(245,175,25,.15);border:1px solid rgba(245,175,25,.3);border-radius:16px;padding:3px 12px;font-size:11px;color:#f5af19;margin-top:6px}
+.groups-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.group-card{background:linear-gradient(135deg,#1a1f3a,#162032);border:1px solid #2a3050;border-radius:10px;padding:10px;position:relative}
+.group-card .ghead{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.glabel{background:linear-gradient(135deg,#f5af19,#f12711);color:#fff;font-weight:800;font-size:12px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center}
+.gname{font-size:10px;color:#8892b0}
+.group-card .gstatus{font-size:9px;color:#f5af19;margin-left:auto;display:none}
+.group-card.ok .gstatus{display:inline}
+.team-row{display:flex;align-items:center;font-size:12px;border-bottom:1px solid rgba(255,255,255,.03);cursor:pointer;transition:all .15s;border-radius:4px;padding:5px 6px;-webkit-tap-highlight-color:transparent;user-select:none}
+.team-row:last-child{border-bottom:none}
+.team-row:hover{background:rgba(245,175,25,.08)}
+.team-row .tname{flex:1;color:#ccd6f6}
+.team-row .trole{font-size:9px;min-width:32px;text-align:right;color:#5a6388}
+.team-row.rank1{background:rgba(245,175,25,.18);border-left:3px solid #f5af19;margin-left:-3px}
+.team-row.rank1 .tname{color:#f5af19;font-weight:700}
+.team-row.rank1 .trole{color:#f5af19}
+.team-row.rank2{background:rgba(100,180,255,.12);border-left:3px solid #64b4ff;margin-left:-3px}
+.team-row.rank2 .tname{color:#64b4ff;font-weight:600}
+.team-row.rank2 .trole{color:#64b4ff}
+.team-row.rank3{background:rgba(150,150,150,.08);border-left:3px solid #888;margin-left:-3px}
+.team-row.rank3 .tname{color:#888}
+.team-row.rank3 .trole{color:#888}
+.bracket-section{margin-top:14px}
+.bracket-section h3{font-size:14px;color:#f5af19;margin-bottom:4px}
+.bracket-hint{font-size:10px;color:#5a6388;margin-bottom:8px}
+.bracket-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px}
+.bracket{display:flex;gap:4px;min-width:700px;font-size:9px}
+.round-col{display:flex;flex-direction:column;justify-content:space-around;flex-shrink:0}
+.round-label{text-align:center;font-size:8px;color:#f5af19;font-weight:600;padding:3px 0}
+.match-card{background:#141832;border:1px solid #2a3050;border-radius:6px;margin:2px;padding:4px 6px;width:115px;transition:all .3s}
+.match-card .mslot{padding:2px 0;border-bottom:1px dashed rgba(255,255,255,.04);color:#5a6388;min-height:14px}
+.match-card .mslot:last-child{border-bottom:none}
+.match-card .mslot.filled{color:#ccd6f6;font-weight:600}
+.match-card .mslot .minfo{font-size:7px;color:#4a5278}
+.match-card.active{border-color:#f5af19;box-shadow:0 0 8px rgba(245,175,25,.2)}
+.champion-box{background:linear-gradient(135deg,#f5af19,#f12711);border-radius:10px;padding:10px;text-align:center;width:115px}
+.champion-box .clabel{font-size:9px;color:rgba(0,0,0,.6)}
+.champion-box .cname{font-size:14px;font-weight:800;color:#0a0e27}
+.btn-main{display:block;width:100%;padding:14px;border:none;border-radius:24px;font-size:15px;font-weight:700;cursor:pointer;margin:8px 0}
+.btn-gen{background:linear-gradient(135deg,#f5af19,#f12711);color:#fff}
+.btn-reset{background:transparent;color:#5a6388;border:1px solid #2a3050}
+#posterWrap{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);z-index:999;justify-content:center;align-items:center;overflow:auto}
+#posterWrap.show{display:flex;flex-direction:column}
+#posterClose{position:absolute;top:16px;right:20px;font-size:28px;color:#fff;cursor:pointer;z-index:1000}
+#posterImg{max-width:95%;max-height:80vh;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,.6)}
+#posterHint{color:#fff;font-size:13px;text-align:center;margin-top:16px}
+.footer{text-align:center;padding:20px 0;color:#4a5278;font-size:10px}
+.progress-bar{height:4px;background:#2a3050;border-radius:2px;margin:8px 0}
+.progress-fill{height:100%;background:linear-gradient(90deg,#f5af19,#f12711);border-radius:2px;transition:width .3s}
+.progress-text{font-size:10px;color:#5a6388;text-align:right}
 </style>
 </head>
 <body>
 <div class="container">
-  <div class="header">
-    <h1>🏆 2026世界杯冠军预测</h1>
-    <div class="sub">美加墨世界杯 · 6.11—7.19 · 48队竞猜</div>
-    <div class="badge">🎯 点击球队选中出线 · 至少选24队</div>
-  </div>
+<div class="header">
+<h1>🏆 2026世界杯冠军预测</h1>
+<div class="sub">美加墨世界杯 · 6.11—7.19 · 48队竞猜</div>
+<div class="badge">🎯 点击球队依次分配: 小组第1 → 第2 → 第3（再点取消）</div>
+</div>
 
-  <div class="progress-bar"><div class="progress-fill" id="progFill" style="width: 0%"></div></div>
-  <div class="progress-text" id="progText">已选 0/32</div>
+<div class="progress-bar"><div class="progress-fill" id="progFill" style="width:0%"></div></div>
+<div class="progress-text" id="progText">0/12 组完成</div>
 
-  <div class="groups-grid" id="groupsGrid"></div>
+<div class="groups-grid" id="groupsGrid"></div>
 
-  <button class="btn-main btn-gen" onclick="genPoster()">📸 生成我的预测海报</button>
-  <button class="btn-main btn-reset" onclick="resetAll()">🔄 清空重选</button>
+<button class="btn-main btn-gen" onclick="genPoster()">📸 生成我的预测海报</button>
+<button class="btn-main btn-reset" onclick="resetAll()">🔄 清空重选</button>
 
-  <div class="bracket-section">
-    <h3>🏟 淘汰赛对阵路径（参考）</h3>
-    <div class="bracket-scroll"><div class="bracket" id="bracketTree"></div></div>
-  </div>
+<div class="bracket-section">
+<h3>🏟 动态对阵树 · 选完球队自动填充</h3>
+<div class="bracket-hint">1A=A组第1名 · 2B=B组第2名 · 3C=C组第3名 · ←左右滑动→</div>
+<div class="bracket-scroll"><div class="bracket" id="bracketTree"></div></div>
+</div>
 
-  <div class="footer">仅供娱乐 · 赛制基于FIFA官方 · 长按海报保存发抖音</div>
+<div class="footer">仅供娱乐 · 赛制基于FIFA官方 · 长按海报保存发抖音</div>
 </div>
 
 <div id="posterWrap">
-  <span id="posterClose" onclick="closePoster()">✕</span>
-  <img id="posterImg" src="" alt="预测海报">
-  <div id="posterHint">📱 长按图片保存到相册 → 发抖音</div>
+<span id="posterClose" onclick="closePoster()">✕</span>
+<img id="posterImg" src="" alt="预测海报">
+<div id="posterHint">📱 长按图片保存到相册 → 发抖音</div>
 </div>
-
 <canvas id="posterCanvas" style="display:none"></canvas>
 
 <script>
-// === DATA ===
-var groups = [
-  {id:'A',teams:['🇲🇽 墨西哥','🇿🇦 南非','🇰🇷 韩国','🇨🇿 捷克']},
-  {id:'B',teams:['🇨🇦 加拿大','🇧🇦 波黑','🇶🇦 卡塔尔','🇨🇭 瑞士']},
-  {id:'C',teams:['🇧🇷 巴西','🇲🇦 摩洛哥','🇭🇹 海地','🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰']},
-  {id:'D',teams:['🇺🇸 美国','🇵🇾 巴拉圭','🇦🇺 澳大利亚','🇹🇷 土耳其']},
-  {id:'E',teams:['🇩🇪 德国','🇨🇼 库拉索','🇨🇮 科特迪瓦','🇪🇨 厄瓜多尔']},
-  {id:'F',teams:['🇳🇱 荷兰','🇯🇵 日本','🇸🇪 瑞典','🇹🇳 突尼斯']},
-  {id:'G',teams:['🇧🇪 比利时','🇪🇬 埃及','🇮🇷 伊朗','🇳🇿 新西兰']},
-  {id:'H',teams:['🇪🇸 西班牙','🇨🇻 佛得角','🇸🇦 沙特','🇺🇾 乌拉圭']},
-  {id:'I',teams:['🇫🇷 法国','🇸🇳 塞内加尔','🇮🇶 伊拉克','🇳🇴 挪威']},
-  {id:'J',teams:['🇦🇷 阿根廷','🇩🇿 阿尔及利亚','🇦🇹 奥地利','🇯🇴 约旦']},
-  {id:'K',teams:['🇵🇹 葡萄牙','🇨🇩 刚果(金)','🇺🇿 乌兹别克','🇨🇴 哥伦比亚']},
-  {id:'L',teams:['🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰','🇭🇷 克罗地亚','🇬🇭 加纳','🇵🇦 巴拿马']}
+var groups=[
+  {id:'A',teams:['墨西哥','南非','韩国','捷克']},
+  {id:'B',teams:['加拿大','波黑','卡塔尔','瑞士']},
+  {id:'C',teams:['巴西','摩洛哥','海地','苏格兰']},
+  {id:'D',teams:['美国','巴拉圭','澳大利亚','土耳其']},
+  {id:'E',teams:['德国','库拉索','科特迪瓦','厄瓜多尔']},
+  {id:'F',teams:['荷兰','日本','瑞典','突尼斯']},
+  {id:'G',teams:['比利时','埃及','伊朗','新西兰']},
+  {id:'H',teams:['西班牙','佛得角','沙特','乌拉圭']},
+  {id:'I',teams:['法国','塞内加尔','伊拉克','挪威']},
+  {id:'J',teams:['阿根廷','阿尔及利亚','奥地利','约旦']},
+  {id:'K',teams:['葡萄牙','刚果(金)','乌兹别克','哥伦比亚']},
+  {id:'L',teams:['英格兰','克罗地亚','加纳','巴拿马']}
 ];
 
-var r32 = [
-  {id:1,t1:'1E',t2:'3D'},{id:2,t1:'1I',t2:'3H'},{id:3,t1:'2A',t2:'2B'},{id:4,t1:'1F',t2:'2C'},
-  {id:5,t1:'2K',t2:'2L'},{id:6,t1:'1H',t2:'2J'},{id:7,t1:'1D',t2:'3B'},{id:8,t1:'1G',t2:'3A'},
-  {id:9,t1:'1C',t2:'2F'},{id:10,t1:'2E',t2:'2I'},{id:11,t1:'1A',t2:'3C'},{id:12,t1:'1L',t2:'3K'},
-  {id:13,t1:'1J',t2:'2H'},{id:14,t1:'2D',t2:'2G'},{id:15,t1:'1B',t2:'3G'},{id:16,t1:'1K',t2:'3L'}
+var r32Pairs=[
+  ['E-1','D-3'],['I-1','H-3'],['A-2','B-2'],['F-1','C-2'],
+  ['K-2','L-2'],['H-1','J-2'],['D-1','B-3'],['G-1','A-3'],
+  ['C-1','F-2'],['E-2','I-2'],['A-1','C-3'],['L-1','K-3'],
+  ['J-1','H-2'],['D-2','G-2'],['B-1','G-3'],['K-1','L-3']
 ];
+var r16Pairs=[[0,1],[2,3],[8,9],[10,11],[4,5],[12,13],[6,7],[14,15]];
+var qfPairs=[[0,1],[4,5],[2,3],[6,7]];
 
-// === RENDER GROUPS ===
-function renderGroups() {
-  var grid = document.getElementById('groupsGrid');
-  grid.innerHTML = groups.map(function(g, gi){
-    return '<div class="group-card"><div class="ghead"><span class="glabel">'+g.id+'</span><span class="gname">小组</span></div>'+
-      g.teams.map(function(t, ti){
-        return '<div class="team-row" data-g="'+gi+'" data-t="'+ti+'" onclick="toggleTeam(this)"><span class="trank">'+
-          (ti===0?'①':ti===1?'②':ti===2?'③':'④')+'</span><span class="tname">'+t+'</span></div>';
-      }).join('')+'</div>';
+var state={};
+groups.forEach(function(g,i){state[i]=[-1,-1,-1]});
+
+function renderGroups(){
+  var g=document.getElementById('groupsGrid');
+  g.innerHTML=groups.map(function(gp,gi){
+    var s=state[gi], ranked=s.filter(function(x){return x>=0}).length;
+    return '<div class="group-card'+(ranked>=2?' ok':'')+'"><div class="ghead">'+
+    '<span class="glabel">'+gp.id+'</span><span class="gname">小组</span>'+
+    '<span class="gstatus">✓'+ranked+'队</span></div>'+
+    gp.teams.map(function(t,ti){
+      var r=s.indexOf(ti);
+      return '<div class="team-row '+(r===0?'rank1':r===1?'rank2':r===2?'rank3':'')+
+      '" data-g="'+gi+'" data-t="'+ti+'" onclick="clickTeam(this)">'+
+      '<span class="tname">'+t+'</span>'+
+      '<span class="trole">'+(r===0?'🥇第1':r===1?'🥈第2':r===2?'🥉第3':'')+'</span></div>';
+    }).join('')+'</div>';
   }).join('');
 }
 
-// === TOGGLE TEAM ===
-function toggleTeam(el) {
-  el.classList.toggle('picked');
-  updateProgress();
+function clickTeam(el){
+  var gi=parseInt(el.dataset.g), ti=parseInt(el.dataset.t), s=state[gi], cur=s.indexOf(ti);
+  if(cur===0){s[0]=-1;if(s[1]===-1)s[1]=ti}
+  else if(cur===1){s[1]=-1;if(s[2]===-1)s[2]=ti}
+  else if(cur===2){s[2]=-1}
+  else{if(s[0]===-1)s[0]=ti;else if(s[1]===-1)s[1]=ti;else if(s[2]===-1)s[2]=ti}
+  renderGroups(); renderBracket(); updateProgress();
 }
 
-function getPicked() {
-  var result = {};
-  var rows = document.querySelectorAll('.team-row.picked');
-  rows.forEach(function(r){
-    var g = parseInt(r.dataset.g), t = parseInt(r.dataset.t);
-    if (!result[g]) result[g] = [];
-    result[g].push(t);
+function getTeam(gId,rank){
+  var gi=groups.findIndex(function(g){return g.id===gId});
+  if(gi<0)return null;
+  var ti=state[gi][rank-1];
+  return ti>=0?groups[gi].teams[ti]:null;
+}
+
+function renderBracket(){
+  var html='';
+  function mc(t1,t2,mid){
+    var f1=t1.indexOf('-')<0&&t1.indexOf('W')<0, f2=t2.indexOf('-')<0&&t2.indexOf('W')<0;
+    return '<div class="match-card'+(f1||f2?' active':'')+'"><div class="mslot'+(f1?' filled':'')+
+    '"><span class="minfo">'+mid+'</span> '+t1+'</div><div class="mslot'+(f2?' filled':'')+'">'+t2+'</div></div>';
+  }
+  var r32Names=r32Pairs.map(function(p){
+    return [getTeam(p[0][0],parseInt(p[0][2]))||p[0], getTeam(p[1][0],parseInt(p[1][2]))||p[1]];
   });
-  return result;
+  html+='<div class="round-col"><div class="round-label">32强赛 6.28</div>';
+  r32Names.forEach(function(n,i){html+=mc(n[0],n[1],'M'+(73+i))});
+  html+='</div><div class="round-col"><div class="round-label">16强赛 7.4</div>';
+  r16Pairs.forEach(function(p,i){html+=mc('W'+(73+p[0]),'W'+(73+p[1]),'M'+(89+i))});
+  html+='</div><div class="round-col"><div class="round-label">8强 7.9</div>';
+  qfPairs.forEach(function(p,i){html+=mc('W'+(89+p[0]),'W'+(89+p[1]),'M'+(97+i))});
+  html+='</div><div class="round-col"><div class="round-label">半决赛</div>';
+  html+=mc('W97','W98','M101'); html+=mc('W99','W100','M102');
+  html+='</div><div class="round-col" style="justify-content:center"><div class="round-label">决赛 7.19</div>';
+  html+='<div class="champion-box"><div class="clabel">🏆 冠军 · M104</div><div class="cname">？</div></div></div>';
+  document.getElementById('bracketTree').innerHTML=html;
 }
 
-function updateProgress() {
-  var picked = getPicked();
-  var total = 0;
-  for (var k in picked) total += picked[k].length;
-  document.getElementById('progFill').style.width = Math.min(total/32*100, 100)+'%';
-  document.getElementById('progText').textContent = '已选 '+total+'/32（每组至少选2队）';
+function updateProgress(){
+  var done=0,total=0;
+  for(var i=0;i<12;i++){var c=state[i].filter(function(x){return x>=0}).length;total+=c;if(c>=2)done++}
+  document.getElementById('progFill').style.width=Math.min(done/12*100,100)+'%';
+  document.getElementById('progText').textContent=done+'/12 组完成 · 已选 '+total+' 队';
 }
 
-function resetAll() {
-  document.querySelectorAll('.team-row.picked').forEach(function(e){e.classList.remove('picked')});
-  updateProgress();
+function resetAll(){
+  groups.forEach(function(g,i){state[i]=[-1,-1,-1]});
+  renderGroups(); renderBracket(); updateProgress();
 }
 
-// === RENDER BRACKET (simplified for mobile) ===
-function renderBracket() {
-  var tree = document.getElementById('bracketTree');
-  var html = '';
-  function mc(t1,t2,mid){ return '<div class="match-card"><div class="mslot"><span class="minfo">'+mid+'</span> '+t1+'</div><div class="mslot">'+t2+'</div></div>'; }
-  
-  html += '<div class="round-col"><div class="round-label">32强</div>';
-  r32.forEach(function(m){ html += mc(m.t1,m.t2,'M'+(72+m.id)); });
-  html += '</div>';
-
-  var r16p = [[0,1],[2,3],[8,9],[10,11],[4,5],[12,13],[6,7],[14,15]];
-  html += '<div class="round-col"><div class="round-label">16强</div>';
-  r16p.forEach(function(p,i){ html += mc('W'+(73+r32[p[0]].id),'W'+(73+r32[p[1]].id),'M'+(89+i)); });
-  html += '</div>';
-
-  var qfp = [[0,1],[4,5],[2,3],[6,7]];
-  html += '<div class="round-col"><div class="round-label">8强</div>';
-  qfp.forEach(function(p,i){ html += mc('W'+(89+p[0]),'W'+(89+p[1]),'M'+(97+i)); });
-  html += '</div>';
-
-  html += '<div class="round-col"><div class="round-label">半决赛</div>';
-  html += mc('W97','W98','M101');
-  html += mc('W99','W100','M102');
-  html += '</div>';
-
-  html += '<div class="round-col" style="justify-content:center;"><div class="round-label">决赛 7.19</div>';
-  html += '<div class="champion-box"><div class="clabel">🏆 冠军</div><div class="cname">？</div></div></div>';
-  
-  tree.innerHTML = html;
-}
-
-// === GENERATE POSTER ===
-function genPoster() {
-  var picked = getPicked();
-  var total = 0;
-  for (var k in picked) total += picked[k].length;
-  if (total < 24) { alert('请至少选择 24 支球队（每组至少 2 队）'); return; }
-
-  var canvas = document.getElementById('posterCanvas');
-  var W = 750, H = 1600;
-  canvas.width = W; canvas.height = H;
-  var ctx = canvas.getContext('2d');
-
-  // BG
-  ctx.fillStyle = '#0a0e27'; ctx.fillRect(0,0,W,H);
-
-  // Title
-  ctx.fillStyle = '#f5af19'; ctx.font = 'bold 30px "PingFang SC","Microsoft YaHei",sans-serif'; ctx.textAlign = 'center';
-  ctx.fillText('🏆 2026世界杯冠军预测', W/2, 55);
-
-  ctx.fillStyle = '#8892b0'; ctx.font = '14px "PingFang SC","Microsoft YaHei",sans-serif';
-  ctx.fillText('2026 FIFA World Cup · 美加墨 · 我的预测', W/2, 80);
-
-  // Groups
-  var gx = 24, gy = 110, gw = 170, gh = 100, gap = 10;
-  for (var gi = 0; gi < groups.length; gi++) {
-    var g = groups[gi];
-    var cx = gx + (gi % 4) * (gw + gap);
-    var cy = gy + Math.floor(gi / 4) * (gh + gap);
-
-    ctx.fillStyle = '#141832'; ctx.strokeStyle = '#2a3050'; ctx.lineWidth = 1;
-    drawRoundRect(ctx, cx, cy, gw, gh, 8);
-    ctx.fill(); ctx.stroke();
-
-    // Group label
-    ctx.fillStyle = '#f5af19';
-    drawRoundRect(ctx, cx+6, cy+6, 28, 22, 5);
-    ctx.fill();
-    ctx.fillStyle = '#0a0e27'; ctx.font = 'bold 13px "PingFang SC","Microsoft YaHei",sans-serif'; ctx.textAlign = 'center';
-    ctx.fillText(g.id, cx+20, cy+22);
-
-    ctx.fillStyle = '#8892b0'; ctx.font = '10px "PingFang SC","Microsoft YaHei",sans-serif'; ctx.textAlign = 'left';
-    ctx.fillText('小组', cx+40, cy+22);
-
-    var sel = picked[gi] || [];
-    for (var ti = 0; ti < g.teams.length; ti++) {
-      var ty = cy + 38 + ti * 16;
-      var isPicked = sel.indexOf(ti) !== -1;
-      ctx.fillStyle = isPicked ? '#f5af19' : '#5a6388'; ctx.font = 'bold 11px "PingFang SC","Microsoft YaHei",sans-serif';
-      ctx.fillText(isPicked ? '✅' : '☐', cx+10, ty);
-      ctx.fillStyle = isPicked ? '#f5af19' : '#ccd6f6'; ctx.font = '11px "PingFang SC","Microsoft YaHei",sans-serif';
-      ctx.fillText(g.teams[ti], cx+28, ty);
+function genPoster(){
+  var total=0;
+  for(var i=0;i<12;i++)total+=state[i].filter(function(x){return x>=0}).length;
+  if(total<24){alert('请至少为每组选出 2 支出线球队（共 24 队）');return}
+  var c=document.getElementById('posterCanvas'),W=750,H=1600;
+  c.width=W;c.height=H;
+  var ctx=c.getContext('2d');
+  ctx.fillStyle='#0a0e27';ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='#f5af19';ctx.font='bold 30px "PingFang SC","Microsoft YaHei",sans-serif';ctx.textAlign='center';
+  ctx.fillText('🏆 2026世界杯冠军预测',W/2,55);
+  ctx.fillStyle='#8892b0';ctx.font='14px "PingFang SC","Microsoft YaHei",sans-serif';
+  ctx.fillText('FIFA World Cup · 美加墨 · 我的出线预测',W/2,80);
+  var gx=24,gy=110,gw=170,gh=105,gap=10;
+  for(var gi=0;gi<12;gi++){
+    var g=groups[gi],s=state[gi],cx=gx+(gi%4)*(gw+gap),cy=gy+Math.floor(gi/4)*(gh+gap);
+    ctx.fillStyle='#141832';ctx.strokeStyle='#2a3050';ctx.lineWidth=1;
+    roundRect(ctx,cx,cy,gw,gh,8);ctx.fill();ctx.stroke();
+    ctx.fillStyle='#f5af19';roundRect(ctx,cx+6,cy+6,28,22,5);ctx.fill();
+    ctx.fillStyle='#0a0e27';ctx.font='bold 13px "PingFang SC","Microsoft YaHei",sans-serif';ctx.textAlign='center';
+    ctx.fillText(g.id,cx+20,cy+22);
+    ctx.fillStyle='#8892b0';ctx.font='10px sans-serif';ctx.textAlign='left';
+    ctx.fillText('小组',cx+40,cy+22);
+    for(var ti=0;ti<g.teams.length;ti++){
+      var ty=cy+40+ti*16,r=s.indexOf(ti),p=r>=0;
+      ctx.fillStyle=p?(r===0?'#f5af19':r===1?'#64b4ff':'#888'):'#5a6388';
+      ctx.font='bold 11px sans-serif';ctx.fillText(p?'✅':'☐',cx+8,ty);
+      ctx.fillStyle=p?(r===0?'#f5af19':r===1?'#64b4ff':'#888'):'#ccd6f6';
+      ctx.font='11px sans-serif';ctx.fillText(g.teams[ti],cx+26,ty);
     }
   }
-
-  // Footer
-  var fy = gy + 3 * (gh + gap) + 30;
-  ctx.fillStyle = '#8892b0'; ctx.font = '12px "PingFang SC","Microsoft YaHei",sans-serif'; ctx.textAlign = 'center';
-  ctx.fillText('📱 保存图片发抖音参与竞猜 · 6月11日开赛', W/2, fy);
-  ctx.fillText('赛制与对阵基于 FIFA 官方公布 · 仅供娱乐参考', W/2, fy+20);
-
-  // Show
-  var dataUrl = canvas.toDataURL('image/png');
-  document.getElementById('posterImg').src = dataUrl;
+  var fy=gy+3*(gh+gap)+30;
+  ctx.fillStyle='#8892b0';ctx.font='12px sans-serif';ctx.textAlign='center';
+  ctx.fillText('📱 保存图片发抖音参与竞猜 · 6月11日开赛',W/2,fy);
+  ctx.fillText('赛制与对阵基于 FIFA 官方公布 · 仅供娱乐参考',W/2,fy+20);
+  document.getElementById('posterImg').src=c.toDataURL('image/png');
   document.getElementById('posterWrap').classList.add('show');
 }
 
-function closePoster() {
-  document.getElementById('posterWrap').classList.remove('show');
-}
+function closePoster(){document.getElementById('posterWrap').classList.remove('show')}
 
-function drawRoundRect(ctx, x, y, w, h, r) {
+function roundRect(ctx,x,y,w,h,r){
   ctx.beginPath();
-  ctx.moveTo(x+r, y); ctx.lineTo(x+w-r, y);
-  ctx.arcTo(x+w, y, x+w, y+r, r);
-  ctx.lineTo(x+w, y+h-r); ctx.arcTo(x+w, y+h, x+w-r, y+h, r);
-  ctx.lineTo(x+r, y+h); ctx.arcTo(x, y+h, x, y+h-r, r);
-  ctx.lineTo(x, y+r); ctx.arcTo(x, y, x+r, y, r);
+  ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);
+  ctx.arcTo(x+w,y,x+w,y+r,r);
+  ctx.lineTo(x+w,y+h-r);ctx.arcTo(x+w,y+h,x+w-r,y+h,r);
+  ctx.lineTo(x+r,y+h);ctx.arcTo(x,y+h,x,y+h-r,r);
+  ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y+r);
   ctx.closePath();
 }
 
-// === INIT ===
-renderGroups();
-renderBracket();
+renderGroups();renderBracket();
 </script>
 </body>
 </html>
