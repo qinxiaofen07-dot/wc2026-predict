@@ -73,7 +73,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 #posterWrap{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);z-index:9999;justify-content:center;align-items:center}
 #posterWrap.show{display:flex;flex-direction:column}
 #posterClose{position:absolute;top:12px;right:16px;font-size:26px;color:#fff;cursor:pointer;z-index:10000}
-#posterImg{max-width:95%;max-height:75vh;border-radius:10px}
+#posterImg{max-width:95%;max-height:70vh;border-radius:10px;-webkit-touch-callout:default!important;touch-action:auto;user-select:auto;pointer-events:auto}
 #posterHint{color:#fff;font-size:12px;text-align:center;margin-top:8px}
 
 .progress-bar{height:3px;background:#2a3050;border-radius:2px;margin:3px 0}
@@ -113,9 +113,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 </div>
 
 <div id="posterWrap"><span id="posterClose" onclick="closePoster()">✕</span>
-<img id="posterImg" src="" alt=""><div id="posterHint">📱 长按保存 → 发抖音</div></div>
+<img id="posterImg" src="" alt=""><button onclick="downloadPoster()" style="display:block;margin:8px auto;padding:10px 30px;background:#fff;color:#0a0e27;border:none;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer">💾 点此下载图片</button>
+<div id="posterHint">📱 或长按图片保存 → 发抖音</div></div>
 <canvas id="pc" style="display:none"></canvas>
-<div id="vtg">v3.5</div>
+<div id="vtg">v3.6</div>
 
 <script>
 var FL={
@@ -334,6 +335,15 @@ function doPoster(){
   x.fillText('赛制基于FIFA官方公布 · 仅供娱乐参考',W/2,fy+16);
   document.getElementById('posterImg').src=c.toDataURL('image/png');
   document.getElementById('posterWrap').classList.add('show');
+}
+function downloadPoster(){
+  var img=document.getElementById('posterImg');
+  var a=document.createElement('a');
+  a.href=img.src;
+  a.download='wc2026-predict-'+Date.now()+'.png';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 function closePoster(){document.getElementById('posterWrap').classList.remove('show')}
 function rR(x,cx,cy,w,h,r){
