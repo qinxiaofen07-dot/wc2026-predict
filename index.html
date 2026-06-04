@@ -11,15 +11,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 .header{text-align:center;padding:14px 0 6px}
 .header h1{font-size:20px;background:linear-gradient(135deg,#f5af19,#f12711);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .header .sub{font-size:10px;color:#8892b0}
+.fmt{background:rgba(245,175,25,.08);border:1px solid rgba(245,175,25,.2);border-radius:8px;padding:7px 10px;margin:6px 0;font-size:10px;color:#f5af19;text-align:center;line-height:1.6}
+.fmt b{color:#f5af19}
+.fmt span{color:#8892b0}
 
 .step-label{font-size:13px;font-weight:700;color:#f5af19;margin:8px 0 2px}
 .step-label .num{display:inline-block;background:#f5af19;color:#0a0e27;width:18px;height:18px;border-radius:50%;text-align:center;line-height:18px;font-size:11px;margin-right:4px}
 .step-hint{font-size:9px;color:#5a6388;margin-bottom:4px}
 
 .groups-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:5px}
-.group-card{background:linear-gradient(135deg,#1a1f3a,#162032);border:1px solid #2a3050;border-radius:7px;padding:6px}
+.group-card{background:linear-gradient(135deg,#1a1f3a,#162032);border:1px solid #2a3050;border-radius:7px;padding:6px;position:relative}
 .ghead{display:flex;align-items:center;gap:3px;margin-bottom:2px;font-size:10px}
-.glabel{background:linear-gradient(135deg,#f5af19,#f12711);color:#fff;font-weight:800;font-size:10px;width:18px;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center}
+.glabel{background:linear-gradient(135deg,#f5af19,#f12711);color:#fff;font-weight:800;font-size:10px;width:18px;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.g3badge{font-size:7px;background:rgba(150,150,150,.2);color:#888;border-radius:3px;padding:0 4px;margin-left:2px;display:none}
+.g3badge.show{display:inline}
 
 .team-row{display:flex;align-items:center;font-size:10px;border-bottom:1px solid rgba(255,255,255,.02);cursor:pointer;padding:3px 3px;border-radius:2px;gap:3px;transition:all .1s;-webkit-tap-highlight-color:transparent;user-select:none}
 .team-row:last-child{border-bottom:none}
@@ -44,20 +49,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 .match-box{background:#141832;border:1px solid #2a3050;border-radius:5px;margin:1px;width:108px;overflow:hidden}
 .match-box.hasWin{border-color:rgba(245,175,25,.4)}
 
-/* Slot: team entry in a match */
 .kslot{display:flex;align-items:center;gap:3px;padding:2px 5px;min-height:15px;border-bottom:1px dashed rgba(255,255,255,.03);font-size:7px;transition:all .15s}
 .kslot:last-child{border-bottom:none}
 .kslot .kflag{font-size:10px;width:13px;text-align:center;flex-shrink:0}
 .kslot .kname{flex:1;color:#5a6388;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .kslot .kname.team{color:#ccd6f6;font-weight:600}
 .kslot .kmatch{font-size:6px;color:#3a4268;flex-shrink:0}
-
-/* Clickable slot */
 .kslot.canClick{cursor:pointer;background:rgba(255,255,255,0.02)}
 .kslot.canClick:hover{background:rgba(245,175,25,.1)}
 .kslot.canClick .kname.team{color:#f5af19;font-weight:700}
-
-/* Winner slot */
 .kslot.winner{background:rgba(245,175,25,.2)!important;border:1px solid #f5af19!important;border-radius:3px}
 .kslot.winner .kname{color:#f5af19!important;font-weight:800!important}
 
@@ -86,21 +86,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 </head>
 <body>
 <div class="container">
-<div class="header"><h1>⚽ 2026世界杯冠军预测</h1><div class="sub">美加墨 · 6.11-7.19 · 48队·我的完整预测</div></div>
+<div class="header"><h1>⚽ 2026世界杯冠军预测</h1><div class="sub">美加墨 · 6.11-7.19 · 48队·完整预测</div></div>
 
-<div style="background:rgba(245,175,25,.08);border:1px solid rgba(245,175,25,.2);border-radius:8px;padding:8px 10px;margin:6px 0;font-size:10px;color:#f5af19;text-align:center;line-height:1.6">
-⚙️ <b>48进32规则：</b>每组前2名（24队）+ 8个成绩最好的小组第3名 → 32强<br>
-<span style="color:#8892b0">A/B/C/D/G/H/K/L 组有第3名落位 · 请为这些组额外选第3名（可选）</span>
+<div class="fmt">
+<b>⚙️ 48进32规则：</b>每组前2名（24队）+ 8个成绩最好的小组第3名 → 32强<br>
+<span>A/B/C/D/G/H/K/L 组有第3名落位（显示 ③ 标记），请为这些组额外选第3名</span>
 </div>
 
 <div class="step-label"><span class="num">1</span>小组赛 — 点击球队分配排名</div>
-<div class="step-hint">每队点1次=🥇第1 · 点2次=🥈第2 · A/B/C/D/G/H/K/L组可再点1队=🥉第3（8个第3名晋级32强）</div>
+<div class="step-hint">点1次=🥇第1 · 点2次=🥈第2 · 带③标记的组可再点1队=🥉第3 · 再点=取消</div>
 <div class="progress-bar"><div class="progress-fill" id="pf" style="width:0%"></div></div>
-<div class="progress-text" id="pt">0/12 组完成</div>
+<div class="progress-text" id="pt">0/12 组完成 · 第3名 0/8</div>
 <div class="groups-grid" id="gg"></div>
 
 <div class="step-label" style="margin-top:6px"><span class="num">2</span>淘汰赛 — 点击队名晋级下一轮</div>
-<div class="step-hint">🇩🇪 有国旗的队名都可点击 · 金色=已晋级 · 再点撤销 · ←左右滑动→</div>
+<div class="step-hint">有国旗的队名=可点击 · 金色=已晋级 · 再点撤销 · ←左右滑动→</div>
 <div class="bracket-wrap"><div class="bracket-scroll"><div class="bracket" id="bt"></div></div></div>
 
 <button class="btn btn-gen" onclick="doPoster()">📸 生成预测海报</button>
@@ -111,10 +111,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div id="posterWrap"><span id="posterClose" onclick="closePoster()">✕</span>
 <img id="posterImg" src="" alt=""><div id="posterHint">📱 长按保存 → 发抖音</div></div>
 <canvas id="pc" style="display:none"></canvas>
-<div id="vtg">v3.1</div>
+<div id="vtg">v3.2</div>
 
 <script>
-// ====== DATA ======
 var FL={
   '墨西哥':'🇲🇽','南非':'🇿🇦','韩国':'🇰🇷','捷克':'🇨🇿',
   '加拿大':'🇨🇦','波黑':'🇧🇦','卡塔尔':'🇶🇦','瑞士':'🇨🇭',
@@ -137,8 +136,8 @@ var GR=[
   {id:'I',t:['法国','塞内加尔','伊拉克','挪威']},{id:'J',t:['阿根廷','阿尔及利亚','奥地利','约旦']},
   {id:'K',t:['葡萄牙','刚果(金)','乌兹别克','哥伦比亚']},{id:'L',t:['英格兰','克罗地亚','加纳','巴拿马']}
 ];
+var THIRD_GROUPS=['A','B','C','D','G','H','K','L'];
 
-// R32: [groupPos, groupPos] 16 pairs
 var R32P=[
   ['E-1','D-3'],['I-1','H-3'],['A-2','B-2'],['F-1','C-2'],
   ['K-2','L-2'],['H-1','J-2'],['D-1','B-3'],['G-1','A-3'],
@@ -146,7 +145,6 @@ var R32P=[
   ['J-1','H-2'],['D-2','G-2'],['B-1','G-3'],['K-1','L-3']
 ];
 
-// Bracket tree: NEXT[mid] = [nextMid, slot] where slot=0 top, 1 bottom
 var NEXT={};
 (function(){
   var r16=[[0,1],[2,3],[8,9],[10,11],[4,5],[12,13],[6,7],[14,15]];
@@ -157,9 +155,8 @@ var NEXT={};
   NEXT[101]=[104,0];NEXT[102]=[104,1];
 })();
 
-// ====== STATE ======
 var GS={}; GR.forEach(function(g,i){GS[i]=[-1,-1,-1]});
-var KW={}; // {matchId: teamName}
+var KW={};
 
 function getGT(gid,rk){
   var gi=GR.findIndex(function(g){return g.id===gid});
@@ -168,13 +165,16 @@ function getGT(gid,rk){
   return ti>=0?{n:GR[gi].t[ti],f:FL[GR[gi].t[ti]]||''}:null;
 }
 
-// ====== RENDER GROUPS ======
+function hasThird(gid){return THIRD_GROUPS.indexOf(gid)>=0;}
+
 function rG(){
   var g=document.getElementById('gg');
   g.innerHTML=GR.map(function(gp,gi){
     var s=GS[gi],c=s.filter(function(x){return x>=0}).length;
+    var show3=hasThird(gp.id);
     return '<div class="group-card"><div class="ghead"><span class="glabel">'+gp.id+'</span>'+
-    '<span style="font-size:8px;color:#8892b0;margin-left:2px">组</span><span style="font-size:7px;background:rgba(150,150,150,.2);color:#888;border-radius:3px;padding:0 3px;margin-left:4px;display:'"+(['A','B','C','D','G','H','K','L'].indexOf(gp.id)>=0?'inline':'none')+'"">③</span>'+
+    '<span style="font-size:8px;color:#8892b0;margin-left:2px">组</span>'+
+    '<span class="g3badge'+(show3?' show':'')+'">③</span>'+
     (c>=2?'<span style="font-size:7px;color:#4ecca3;margin-left:auto">✓'+c+'</span>':'')+'</div>'+
     gp.t.map(function(t,ti){
       var r=s.indexOf(ti);
@@ -196,12 +196,8 @@ function cGT(el){
   rG();rB();uP();
 }
 
-// ====== RESOLVE TEAM FOR R32 SLOT ======
-function rT(ref){
-  return getGT(ref[0],parseInt(ref[2]))||{n:ref,f:''};
-}
+function rT(ref){return getGT(ref[0],parseInt(ref[2]))||{n:ref,f:''};}
 
-// Given matchId+slot, find which previous winner feeds here
 function feedTeam(mid,sid){
   for(var p in NEXT){
     if(NEXT[p][0]===mid&&NEXT[p][1]===sid){
@@ -212,119 +208,70 @@ function feedTeam(mid,sid){
   return null;
 }
 
-// ====== CHECK IF SLOT IS CLICKABLE ======
-// Clickable = has a real team name (not placeholder, not '?', not empty)
-function isReal(tm){
-  return tm&&tm.n&&tm.n.indexOf('-')<0&&tm.n!=='?';
-}
+function isReal(tm){return tm&&tm.n&&tm.n.indexOf('-')<0&&tm.n!=='?';}
 
-// ====== RENDER BRACKET ======
 function rB(){
   var tree=document.getElementById('bt'),h='';
-  
-  // Build all R32 teams
+
   var r32t=[];
-  for(var i=0;i<16;i++){
-    r32t.push([rT(R32P[i][0]),rT(R32P[i][1])]);
-  }
-  
-  // Slot HTML helper
+  for(var i=0;i<16;i++){r32t.push([rT(R32P[i][0]),rT(R32P[i][1])]);}
+
   function sH(tm,mid,sid){
     var n=tm.n||'?', f=tm.f||'', can=isReal(tm);
     var cls='kslot';
     if(can)cls+=' canClick';
     if(KW[mid]===n&&n!=='?')cls+=' winner';
-    return '<div class="'+cls+'" data-m="'+mid+'" data-s="'+sid+
-    '" onclick="'+(can?'cKS(this)':'')+'">'+
+    return '<div class="'+cls+'" data-m="'+mid+'" data-s="'+sid+'"'+
+    (can?' onclick="cKS(this)"':'')+'>'+
     '<span class="kflag">'+f+'</span>'+
     '<span class="kname'+(can?' team':'')+'">'+n+'</span>'+
     '<span class="kmatch">M'+mid+'</span></div>';
   }
-  
-  // R32
+
   h+='<div class="round-col"><div class="round-lbl">32强</div>';
   for(var i=0;i<16;i++){
     var mid=73+i, t0=r32t[i][0], t1=r32t[i][1];
-    h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">';
-    h+=sH(t0,mid,0)+sH(t1,mid,1);
-    h+='</div>';
+    h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">'+sH(t0,mid,0)+sH(t1,mid,1)+'</div>';
   }
   h+='</div>';
-  
-  // R16
+
   h+='<div class="round-col"><div class="round-lbl">16强</div>';
   for(var i=0;i<8;i++){
-    var mid=89+i;
-    var f0=feedTeam(mid,0), f1=feedTeam(mid,1);
-    h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">';
-    h+=sH(f0||{n:'?',f:''},mid,0);
-    h+=sH(f1||{n:'?',f:''},mid,1);
-    h+='</div>';
+    var mid=89+i, f0=feedTeam(mid,0), f1=feedTeam(mid,1);
+    h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">'+sH(f0||{n:'?',f:''},mid,0)+sH(f1||{n:'?',f:''},mid,1)+'</div>';
   }
   h+='</div>';
-  
-  // QF
+
   h+='<div class="round-col"><div class="round-lbl">8强</div>';
   for(var i=0;i<4;i++){
-    var mid=97+i;
-    var f0=feedTeam(mid,0), f1=feedTeam(mid,1);
-    h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">';
-    h+=sH(f0||{n:'?',f:''},mid,0);
-    h+=sH(f1||{n:'?',f:''},mid,1);
-    h+='</div>';
+    var mid=97+i, f0=feedTeam(mid,0), f1=feedTeam(mid,1);
+    h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">'+sH(f0||{n:'?',f:''},mid,0)+sH(f1||{n:'?',f:''},mid,1)+'</div>';
   }
   h+='</div>';
-  
-  // SF
+
   h+='<div class="round-col"><div class="round-lbl">半决赛</div>';
   for(var i=0;i<2;i++){
-    var mid=101+i;
-    var f0=feedTeam(mid,0), f1=feedTeam(mid,1);
-    h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">';
-    h+=sH(f0||{n:'?',f:''},mid,0);
-    h+=sH(f1||{n:'?',f:''},mid,1);
-    h+='</div>';
+    var mid=101+i, f0=feedTeam(mid,0), f1=feedTeam(mid,1);
+    h+='<div class="match-box'+(KW[mid]?' hasWin':'')+'">'+sH(f0||{n:'?',f:''},mid,0)+sH(f1||{n:'?',f:''},mid,1)+'</div>';
   }
   h+='</div>';
-  
-  // Final
-  var f0=feedTeam(104,0), f1=feedTeam(104,1);
+
   var champ=KW[104];
   h+='<div class="round-col" style="justify-content:center"><div class="round-lbl">决赛 7.19</div>';
-  h+='<div class="champion-slot" onclick="'+(champ?'cFin()':'')+'" style="'+(champ?'cursor:pointer':'')+'">';
-  h+='<span class="clbl">🏆 冠军</span>';
-  h+='<span class="cflag">'+(champ?(FL[champ]||''):'')+'</span>';
-  h+='<span class="cname">'+(champ||'?')+'</span>';
-  h+='</div></div>';
-  
+  h+='<div class="champion-slot"'+(champ?' onclick="cFin()" style="cursor:pointer"':'')+'>';
+  h+='<span class="clbl">🏆 冠军</span><span class="cflag">'+(champ?(FL[champ]||''):'')+'</span><span class="cname">'+(champ||'?')+'</span></div></div>';
+
   tree.innerHTML=h;
 }
 
-// ====== CLICK KNOCKOUT SLOT ======
 function cKS(el){
-  var mid=parseInt(el.dataset.m), sid=parseInt(el.dataset.s);
-  // Get the team info for this slot
-  var tm=null;
-  if(mid>=73&&mid<=88){
-    // R32: resolve from group selection
-    var ref=R32P[mid-73][sid];
-    tm=getGT(ref[0],parseInt(ref[2]));
-  } else {
-    tm=feedTeam(mid,sid);
-  }
+  var mid=parseInt(el.dataset.m), sid=parseInt(el.dataset.s), tm=null;
+  if(mid>=73&&mid<=88){var ref=R32P[mid-73][sid];tm=getGT(ref[0],parseInt(ref[2]));}
+  else{tm=feedTeam(mid,sid);}
   if(!tm||!tm.n||tm.n==='?'||tm.n.indexOf('-')>=0)return;
-  
   var nm=tm.n;
-  
-  if(KW[mid]===nm){
-    // Undo: clear this and all downstream
-    delete KW[mid];
-    clearDown(mid);
-  } else {
-    delete KW[mid];
-    KW[mid]=nm;
-    clearDown(mid);
-  }
+  if(KW[mid]===nm){delete KW[mid];clearDown(mid);}
+  else{delete KW[mid];KW[mid]=nm;clearDown(mid);}
   rB();
 }
 
@@ -332,27 +279,22 @@ function clearDown(from){
   var next=NEXT[from];
   if(!next)return;
   var nmid=next[0];
-  if(KW[nmid]){
-    delete KW[nmid];
-    clearDown(nmid);
-  }
+  if(KW[nmid]){delete KW[nmid];clearDown(nmid);}
 }
 
-function cFin(){
-  if(KW[104]){delete KW[104];rB();}
-}
+function cFin(){if(KW[104]){delete KW[104];rB();}}
 
-// ====== PROGRESS ======
 function uP(){
   var d=0,t=0;
   for(var i=0;i<12;i++){var c=GS[i].filter(function(x){return x>=0}).length;t+=c;if(c>=2)d++}
+  var t3=0;
+  THIRD_GROUPS.forEach(function(gid){var gi=GR.findIndex(function(g){return g.id===gid});if(gi>=0&&GS[gi][2]>=0)t3++});
   document.getElementById('pf').style.width=Math.min(d/12*100,100)+'%';
-  var t3=0;['A','B','C','D','G','H','K','L'].forEach(function(gid){var gi=GR.findIndex(function(g){return g.id===gid});if(GS[gi][2]>=0)t3++});document.getElementById('pt').textContent=d+'/12 组完成 · 已选 '+t+' 队 · 第3名 '+t3+'/8';
+  document.getElementById('pt').textContent=d+'/12 组完成 · 已选 '+t+' 队 · 第3名 '+t3+'/8';
 }
 
 function doReset(){GS={};GR.forEach(function(g,i){GS[i]=[-1,-1,-1]});KW={};rG();rB();uP();}
 
-// ====== POSTER ======
 function doPoster(){
   var t=0;for(var i=0;i<12;i++)t+=GS[i].filter(function(x){return x>=0}).length;
   if(t<24){alert('请至少为每组选出 2 支出线球队');return}
@@ -363,10 +305,7 @@ function doPoster(){
   x.fillText('🏆 2026世界杯冠军预测',W/2,48);
   x.fillStyle='#8892b0';x.font='14px sans-serif';
   x.fillText('FIFA World Cup · 美加墨 · 我的预测',W/2,70);
-  if(KW[104]){
-    x.fillStyle='#f5af19';x.font='bold 22px sans-serif';
-    x.fillText('冠军: '+(FL[KW[104]]||'')+' '+KW[104],W/2,96);
-  }
+  if(KW[104]){x.fillStyle='#f5af19';x.font='bold 22px sans-serif';x.fillText('冠军: '+(FL[KW[104]]||'')+' '+KW[104],W/2,96);}
   var gx=20,gy=115,gw=175,gh=100,gap=8;
   for(var gi=0;gi<12;gi++){
     var g=GR[gi],s=GS[gi],cx=gx+(gi%4)*(gw+gap),cy=gy+Math.floor(gi/4)*(gh+gap);
