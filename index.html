@@ -88,8 +88,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="container">
 <div class="header"><h1>⚽ 2026世界杯冠军预测</h1><div class="sub">美加墨 · 6.11-7.19 · 48队·我的完整预测</div></div>
 
+<div style="background:rgba(245,175,25,.08);border:1px solid rgba(245,175,25,.2);border-radius:8px;padding:8px 10px;margin:6px 0;font-size:10px;color:#f5af19;text-align:center;line-height:1.6">
+⚙️ <b>48进32规则：</b>每组前2名（24队）+ 8个成绩最好的小组第3名 → 32强<br>
+<span style="color:#8892b0">A/B/C/D/G/H/K/L 组有第3名落位 · 请为这些组额外选第3名（可选）</span>
+</div>
+
 <div class="step-label"><span class="num">1</span>小组赛 — 点击球队分配排名</div>
-<div class="step-hint">每队：点1次=🥇小组第1 · 点2次=🥈小组第2 · 点3次=🥉第3 · 再点=取消</div>
+<div class="step-hint">每队点1次=🥇第1 · 点2次=🥈第2 · A/B/C/D/G/H/K/L组可再点1队=🥉第3（8个第3名晋级32强）</div>
 <div class="progress-bar"><div class="progress-fill" id="pf" style="width:0%"></div></div>
 <div class="progress-text" id="pt">0/12 组完成</div>
 <div class="groups-grid" id="gg"></div>
@@ -169,7 +174,7 @@ function rG(){
   g.innerHTML=GR.map(function(gp,gi){
     var s=GS[gi],c=s.filter(function(x){return x>=0}).length;
     return '<div class="group-card"><div class="ghead"><span class="glabel">'+gp.id+'</span>'+
-    '<span style="font-size:8px;color:#8892b0;margin-left:2px">组</span>'+
+    '<span style="font-size:8px;color:#8892b0;margin-left:2px">组</span><span style="font-size:7px;background:rgba(150,150,150,.2);color:#888;border-radius:3px;padding:0 3px;margin-left:4px;display:'"+(['A','B','C','D','G','H','K','L'].indexOf(gp.id)>=0?'inline':'none')+'"">③</span>'+
     (c>=2?'<span style="font-size:7px;color:#4ecca3;margin-left:auto">✓'+c+'</span>':'')+'</div>'+
     gp.t.map(function(t,ti){
       var r=s.indexOf(ti);
@@ -342,7 +347,7 @@ function uP(){
   var d=0,t=0;
   for(var i=0;i<12;i++){var c=GS[i].filter(function(x){return x>=0}).length;t+=c;if(c>=2)d++}
   document.getElementById('pf').style.width=Math.min(d/12*100,100)+'%';
-  document.getElementById('pt').textContent=d+'/12 组完成 · 已选 '+t+' 队';
+  var t3=0;['A','B','C','D','G','H','K','L'].forEach(function(gid){var gi=GR.findIndex(function(g){return g.id===gid});if(GS[gi][2]>=0)t3++});document.getElementById('pt').textContent=d+'/12 组完成 · 已选 '+t+' 队 · 第3名 '+t3+'/8';
 }
 
 function doReset(){GS={};GR.forEach(function(g,i){GS[i]=[-1,-1,-1]});KW={};rG();rB();uP();}
