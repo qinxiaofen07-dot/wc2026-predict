@@ -49,22 +49,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 .match-box{background:#141832;border:1px solid #2a3050;border-radius:5px;margin:1px;width:108px;overflow:hidden}
 .match-box.hasWin{border-color:rgba(245,175,25,.4)}
 
-.kslot{display:flex;align-items:center;gap:3px;padding:2px 5px;min-height:15px;border-bottom:1px dashed rgba(255,255,255,.03);font-size:7px;transition:all .15s}
+.kslot{display:flex;align-items:center;gap:4px;padding:3px 6px;min-height:22px;border-bottom:1px dashed rgba(255,255,255,.03);font-size:9px;transition:all .15s;touch-action:manipulation}
 .kslot:last-child{border-bottom:none}
 .kslot .kflag{font-size:10px;width:13px;text-align:center;flex-shrink:0}
 .kslot .kname{flex:1;color:#5a6388;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .kslot .kname.team{color:#ccd6f6;font-weight:600}
 .kslot .kmatch{font-size:6px;color:#3a4268;flex-shrink:0}
-.kslot.canClick{cursor:pointer;background:rgba(255,255,255,0.02)}
-.kslot.canClick:hover{background:rgba(245,175,25,.1)}
-.kslot.canClick .kname.team{color:#f5af19;font-weight:700}
+.kslot.canClick{cursor:pointer;background:rgba(255,255,255,0.03);border:1px solid rgba(245,175,25,.15);border-radius:3px;margin:-1px}
+.kslot.canClick:active{background:rgba(245,175,25,.25)}
+.kslot.canClick .kname.team{color:#f5af19;font-weight:700;font-size:10px}
 .kslot.winner{background:rgba(245,175,25,.2)!important;border:1px solid #f5af19!important;border-radius:3px}
 .kslot.winner .kname{color:#f5af19!important;font-weight:800!important}
 
-.champion-slot{background:linear-gradient(135deg,#f5af19,#f12711);border-radius:8px;padding:8px;text-align:center;width:108px}
-.champion-slot .clbl{font-size:8px;color:rgba(0,0,0,.5)}
-.champion-slot .cflag{font-size:18px;display:block}
-.champion-slot .cname{font-size:12px;font-weight:800;color:#0a0e27}
+.champion-slot{background:linear-gradient(135deg,#f5af19,#f12711);border-radius:8px;padding:10px;text-align:center;width:120px;touch-action:manipulation;min-height:50px}
+.champion-slot .clbl{font-size:9px;color:rgba(0,0,0,.5)}
+.champion-slot .cflag{font-size:22px;display:block}
+.champion-slot .cname{font-size:14px;font-weight:800;color:#0a0e27}
 
 .btn{display:block;width:100%;padding:11px;border:none;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;margin:4px 0}
 .btn-gen{background:linear-gradient(135deg,#f5af19,#f12711);color:#fff}
@@ -111,7 +111,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div id="posterWrap"><span id="posterClose" onclick="closePoster()">✕</span>
 <img id="posterImg" src="" alt=""><div id="posterHint">📱 长按保存 → 发抖音</div></div>
 <canvas id="pc" style="display:none"></canvas>
-<div id="vtg">v3.3</div>
+<div id="vtg">v3.4</div>
 
 <script>
 var FL={
@@ -262,8 +262,8 @@ function rB(){
   h+=sH(f0||{n:'?',f:''},104,0);
   h+=sH(f1||{n:'?',f:''},104,1);
   h+='</div>';
-  h+='<div class="champion-slot"'+(champ?' style="cursor:pointer" onclick="cFin()"':'')+'>';
-  h+='<span class="clbl">🏆 冠军</span><span class="cflag">'+(champ?(FL[champ]||''):'')+'</span><span class="cname">'+(champ||'?')+'</span></div></div>';
+  h+='<div class="champion-slot"'+(champ?' style="cursor:pointer" onclick="cFin()" title="点击清除冠军"':'')+'>';
+  h+='<span class="clbl">🏆 冠军'+(champ?'（点击清除）':'')+'</span><span class="cflag">'+(champ?(FL[champ]||''):'')+'</span><span class="cname">'+(champ||'?')+'</span></div></div>';
 
   tree.innerHTML=h;
 }
